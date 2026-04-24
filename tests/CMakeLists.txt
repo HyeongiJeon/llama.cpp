@@ -257,6 +257,10 @@ if (NOT GGML_BACKEND_DL)
     llama_build_and_test(test-quantize-fns.cpp)
     llama_build_and_test(test-quantize-perf.cpp)
     llama_build_and_test(test-rope.cpp)
+    llama_build_and_test(test-gemm-q4k.cpp)
+    target_include_directories(test-gemm-q4k PRIVATE
+        ${PROJECT_SOURCE_DIR}/ggml/src
+        ${PROJECT_SOURCE_DIR}/ggml/src/ggml-cpu)
 endif()
 
 # libmtmd
